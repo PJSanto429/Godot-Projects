@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cyyruk6aw752w"]
+
+[ext_resource type="FontFile" uid="uid://yshpea0813fw" path="res://font.ttf" id="1_gwsx3"]
+
+[resource]
+font = ExtResource("1_gwsx3")
+font_size = 71

@@ -7,8 +7,8 @@ var p2IsBot = false
 var p1Velocity = Vector2.ZERO
 var p2Velocity = Vector2.ZERO
 
-var p1Score = 0
-var p2Score = 0
+var p1Score: int = 0
+var p2Score: int = 0
 
 var explosion = preload("res://sprite_animation.tscn")
 
@@ -50,19 +50,19 @@ func getNewExplosionPosition(ballPosition: Vector2, direction: String) -> Vector
 
 	var ballX = ballPosition.x
 	var ballY = ballPosition.y
-	return Vector2(ballX + halfSize, ballY + halfSize)
+	#return Vector2(ballX + halfSize, ballY + halfSize)
 
-	#match (direction):
-		#('up'):
-			#return Vector2(ballX + halfSize, ballY)
-		#('right'):
-			#return Vector2(ballX + fullSize, ballY + halfSize)
-		#('down'):
-			#return Vector2(ballX + halfSize, ballY + fullSize)
-		#('left'):
-			#return Vector2(ballX, ballY + halfSize)
-		#_:
-			#return ballPosition
+	match (direction):
+		('up'):
+			return Vector2(ballX + halfSize, ballY)
+		('right'):
+			return Vector2(ballX + fullSize, ballY + halfSize)
+		('down'):
+			return Vector2(ballX + halfSize, ballY + fullSize)
+		('left'):
+			return Vector2(ballX, ballY + halfSize)
+		_:
+			return ballPosition
 
 func handleBallMovement(delta: float):
 	var collision = $Ball.move_and_collide($Ball.velocity * delta)
@@ -70,31 +70,30 @@ func handleBallMovement(delta: float):
 	if (collision):
 		var collider = collision.get_collider()
 		if (collider):
-			#print(type_string(typeof(ballSize)))
-			#print($Ball/CollisionShape2D.get_shape().get_rect().size)
-			
 			#creating an exposion at the right spot
 			var newExplosion = explosion.instantiate()
 			var pos = $Ball.position
-			#newExplosion.position = pos
 			
 			if (collider.name in ["Player1", "Player2"]):
-				if ($Ball.velocity.x > 0):
-					newExplosion.position = getNewExplosionPosition(pos, 'right')
-				else:
-					newExplosion.position = getNewExplosionPosition(pos, 'left')
+				newExplosion.position = getNewExplosionPosition(pos, 'right' if $Ball.velocity.x > 0 else 'left')
 				
 				$Ball.velocity.x = -$Ball.velocity.x
 			elif (collider.name == "Walls"):
-				if ($Ball.velocity.y > 0):
-					newExplosion.position = getNewExplosionPosition(pos, 'down')
-				else:
-					newExplosion.position = getNewExplosionPosition(pos, 'up')
+				newExplosion.position = getNewExplosionPosition(pos, 'down' if $Ball.velocity.y > 0 else 'down')
 				
 				$Ball.velocity.y = -$Ball.velocity.y
 			
 			add_child(newExplosion)
-	
+			
+			
+func updateScore(player: int):
+	if (player == 1):
+		p1Score += 1
+		$Lables/p1Score.text = str(p1Score)
+	elif (player == 2):
+		p2Score += 1
+		$Lables/p2Score.text = str(p2Score)
+
 func handleP1Movement():
 	p1Velocity = Vector2.ZERO
 	if (Input.is_action_pressed("p1_up")):
@@ -129,8 +128,10 @@ func resetBall(didScore: bool = false):
 
 func _on_p_1_goal_body_entered(body: Node2D) -> void:
 	if (body.name == "Ball"):
+		updateScore(2)
 		resetBall(true)
 
 func _on_p_2_goal_body_entered(body: Node2D) -> void:
 	if (body.name == "Ball"):
+		updateScore(1)
 		resetBall(true)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqmx8vx6ag08s"]
+[gd_scene load_steps=10 format=3 uid="uid://cqmx8vx6ag08s"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qxnuu"]
+[ext_resource type="LabelSettings" uid="uid://cyyruk6aw752w" path="res://main.tres" id="2_6tpbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv8wi"]
 size = Vector2(40, 40)
@@ -9,10 +10,13 @@ size = Vector2(40, 40)
 size = Vector2(40, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oblfu"]
-size = Vector2(40, 46.4)
+size = Vector2(40, 43.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_na1hy"]
-size = Vector2(1152, 53)
+size = Vector2(1152, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oa44"]
+size = Vector2(1043.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4ur4"]
 size = Vector2(69, 600)
@@ -24,7 +28,7 @@ size = Vector2(67, 599)
 script = ExtResource("1_qxnuu")
 
 [node name="Ball" type="CharacterBody2D" parent="."]
-position = Vector2(578, 69)
+position = Vector2(560, 412)
 collision_layer = 3
 collision_mask = 3
 
@@ -69,12 +73,22 @@ shape = SubResource("RectangleShape2D_oblfu")
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="topWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(576, 6.5)
+position = Vector2(574, 38.25)
 shape = SubResource("RectangleShape2D_na1hy")
 
 [node name="bottomWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(577, 659)
-shape = SubResource("RectangleShape2D_na1hy")
+position = Vector2(576.25, 645)
+shape = SubResource("RectangleShape2D_7oa44")
+
+[node name="topLine" type="Line2D" parent="Walls"]
+position = Vector2(70, 85)
+points = PackedVector2Array(0, -1, 1017, -1)
+width = 5.0
+
+[node name="bottomLine" type="Line2D" parent="Walls"]
+position = Vector2(69, 640)
+points = PackedVector2Array(0, -1, 1017, -1)
+width = 5.0
 
 [node name="p1Goal" type="Area2D" parent="."]
 position = Vector2(10, 43)
@@ -89,6 +103,24 @@ position = Vector2(1142, 43)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="p2Goal"]
 position = Vector2(-23.5, 289.5)
 shape = SubResource("RectangleShape2D_uxvps")
+
+[node name="Lables" type="Node" parent="."]
+
+[node name="p1Score" type="Label" parent="Lables"]
+offset_left = 497.0
+offset_top = 20.0
+offset_right = 572.0
+offset_bottom = 74.0
+text = "0"
+label_settings = ExtResource("2_6tpbw")
+
+[node name="p2Score" type="Label" parent="Lables"]
+offset_left = 610.0
+offset_top = 21.0
+offset_right = 715.0
+offset_bottom = 75.0
+text = "0"
+label_settings = ExtResource("2_6tpbw")
 
 [connection signal="body_entered" from="p1Goal" to="." method="_on_p_1_goal_body_entered"]
 [connection signal="body_entered" from="p2Goal" to="." method="_on_p_2_goal_body_entered"]
