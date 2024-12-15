@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=3 uid="uid://f4lshkyp1ea0"]
+
+[ext_resource type="Script" path="res://sprite_animation.gd" id="1_7qq61"]
+[ext_resource type="Texture2D" uid="uid://cdy87m8epkdlc" path="res://redCircle/Circle_explosion1.png" id="1_slxxj"]
+[ext_resource type="Texture2D" uid="uid://bqtxdpgqi7jug" path="res://redCircle/Circle_explosion2.png" id="2_iigy1"]
+[ext_resource type="Texture2D" uid="uid://huth65xi7vvh" path="res://redCircle/Circle_explosion3.png" id="3_v5cv7"]
+[ext_resource type="Texture2D" uid="uid://bjbu3kj82ryn5" path="res://redCircle/Circle_explosion4.png" id="4_td6cg"]
+[ext_resource type="Texture2D" uid="uid://nftf6p4y1l4j" path="res://redCircle/Circle_explosion5.png" id="5_gb7x5"]
+[ext_resource type="Texture2D" uid="uid://ihajcvtcalmy" path="res://redCircle/Circle_explosion6.png" id="6_tr0gj"]
+[ext_resource type="Texture2D" uid="uid://dh6dhtoeximry" path="res://redCircle/Circle_explosion7.png" id="7_a3rte"]
+[ext_resource type="Texture2D" uid="uid://bwg345ktr08jo" path="res://redCircle/Circle_explosion8.png" id="8_gcsqv"]
+[ext_resource type="Texture2D" uid="uid://egmvnipio3c7" path="res://redCircle/Circle_explosion9.png" id="9_j16aj"]
+[ext_resource type="Texture2D" uid="uid://bx1i3vyymgcue" path="res://redCircle/Circle_explosion10.png" id="10_a8k4o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g54o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_slxxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iigy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v5cv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_td6cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gb7x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tr0gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a3rte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gcsqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j16aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a8k4o")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_sevxy"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Explosion" type="CharacterBody2D"]
+script = ExtResource("1_7qq61")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2g54o")
+animation = &"explode"
+autoplay = "explode"
+frame = 9
+frame_progress = 1.0
+script = SubResource("GDScript_sevxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

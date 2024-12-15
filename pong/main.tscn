@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqmx8vx6ag08s"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qxnuu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv8wi"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haesy"]
+size = Vector2(40, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oblfu"]
+size = Vector2(40, 46.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na1hy"]
+size = Vector2(1152, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4ur4"]
+size = Vector2(69, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxvps"]
+size = Vector2(67, 599)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qxnuu")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(578, 69)
+collision_layer = 3
+collision_mask = 3
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gv8wi")
+
+[node name="Player1" type="CharacterBody2D" parent="."]
+position = Vector2(50, 303)
+scale = Vector2(1, 5)
+collision_layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="Player1"]
+offset_left = -20.0
+offset_top = -19.8
+offset_right = 20.0
+offset_bottom = 20.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource("RectangleShape2D_haesy")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(1104, 309)
+scale = Vector2(1, 5)
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+offset_left = -20.0
+offset_top = -19.8
+offset_right = 20.0
+offset_bottom = 20.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("RectangleShape2D_oblfu")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="topWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 6.5)
+shape = SubResource("RectangleShape2D_na1hy")
+
+[node name="bottomWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(577, 659)
+shape = SubResource("RectangleShape2D_na1hy")
+
+[node name="p1Goal" type="Area2D" parent="."]
+position = Vector2(10, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1Goal"]
+position = Vector2(24.5, 290)
+shape = SubResource("RectangleShape2D_n4ur4")
+
+[node name="p2Goal" type="Area2D" parent="."]
+position = Vector2(1142, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2Goal"]
+position = Vector2(-23.5, 289.5)
+shape = SubResource("RectangleShape2D_uxvps")
+
+[connection signal="body_entered" from="p1Goal" to="." method="_on_p_1_goal_body_entered"]
+[connection signal="body_entered" from="p2Goal" to="." method="_on_p_2_goal_body_entered"]
