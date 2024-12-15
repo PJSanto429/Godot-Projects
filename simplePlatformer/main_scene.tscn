@@ -1,0 +1,924 @@
+[gd_scene load_steps=5 format=3 uid="uid://b600vnds5ri13"]
+
+[ext_resource type="Texture2D" uid="uid://chqhprmyed7e0" path="res://background.jpeg" id="1_fnnw5"]
+[ext_resource type="Texture2D" uid="uid://cs8drd0sfb46j" path="res://icon.svg" id="1_lx5ge"]
+[ext_resource type="PackedScene" uid="uid://dcsbyvasvyrqw" path="res://player.tscn" id="1_q5rll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g77o"]
+size = Vector2(80, 80)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_q5rll")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(464, 129)
+scale = Vector2(0.835521, 0.941875)
+texture = ExtResource("1_fnnw5")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(120, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform2"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(200, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform3"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform4" type="StaticBody2D" parent="Platforms"]
+position = Vector2(280, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform4"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform4"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform5" type="StaticBody2D" parent="Platforms"]
+position = Vector2(360, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform5"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform5"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform6" type="StaticBody2D" parent="Platforms"]
+position = Vector2(440, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform6"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform6"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform7" type="StaticBody2D" parent="Platforms"]
+position = Vector2(520, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform7"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform7"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform8" type="StaticBody2D" parent="Platforms"]
+position = Vector2(600, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform8"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform8"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform43" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-600, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform43"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform43"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform44" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-520, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform44"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform44"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform45" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-440, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform45"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform45"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform46" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-360, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform46"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform46"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform47" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-280, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform47"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform47"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform48" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-200, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform48"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform48"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform49" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-120, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform49"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform49"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform50" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-40, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform50"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform50"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform51" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1880, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform51"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform51"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform52" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1800, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform52"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform52"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform53" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1720, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform53"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform53"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform54" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1640, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform54"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform54"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform55" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1560, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform55"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform55"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform56" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1480, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform56"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform56"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform57" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1400, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform57"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform57"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform58" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1320, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform58"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform58"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform59" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2520, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform59"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform59"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform60" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2440, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform60"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform60"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform61" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2360, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform61"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform61"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform62" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2280, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform62"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform62"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform63" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2200, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform63"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform63"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform64" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2120, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform64"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform64"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform65" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2040, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform65"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform65"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform66" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1960, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform66"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform66"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform67" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-3160, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform67"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform67"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform68" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-3080, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform68"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform68"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform69" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-3000, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform69"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform69"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform70" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2920, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform70"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform70"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform71" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2840, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform71"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform71"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform72" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2760, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform72"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform72"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform73" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2680, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform73"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform73"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform74" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-2600, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform74"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform74"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform75" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1240, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform75"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform75"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform76" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1160, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform76"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform76"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform77" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1080, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform77"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform77"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform78" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-1000, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform78"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform78"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform79" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-920, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform79"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform79"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform80" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-840, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform80"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform80"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform81" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-760, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform81"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform81"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform82" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-680, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform82"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform82"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform14" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform14"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform14"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform15" type="StaticBody2D" parent="Platforms"]
+position = Vector2(120, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform15"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform15"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform37" type="StaticBody2D" parent="Platforms"]
+position = Vector2(200, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform37"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform37"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform38" type="StaticBody2D" parent="Platforms"]
+position = Vector2(280, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform38"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform38"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform39" type="StaticBody2D" parent="Platforms"]
+position = Vector2(360, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform39"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform39"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform40" type="StaticBody2D" parent="Platforms"]
+position = Vector2(440, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform40"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform40"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform41" type="StaticBody2D" parent="Platforms"]
+position = Vector2(520, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform41"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform41"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform42" type="StaticBody2D" parent="Platforms"]
+position = Vector2(600, 608)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform42"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform42"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform9" type="StaticBody2D" parent="Platforms"]
+position = Vector2(600, 528)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform9"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform9"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform10" type="StaticBody2D" parent="Platforms"]
+position = Vector2(680, 528)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform10"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform10"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform11" type="StaticBody2D" parent="Platforms"]
+position = Vector2(760, 528)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform11"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform11"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform12" type="StaticBody2D" parent="Platforms"]
+position = Vector2(760, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform12"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform12"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform13" type="StaticBody2D" parent="Platforms"]
+position = Vector2(840, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform13"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform13"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform16" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1080, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform16"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform16"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform17" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1160, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform17"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform17"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform18" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1240, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform18"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform18"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform19" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1320, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform19"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform19"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform20" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1400, 448)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform20"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform20"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform21" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1400, 368)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform21"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform21"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform22" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1480, 368)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform22"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform22"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform25" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1404, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform25"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform25"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform26" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1484, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform26"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform26"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform27" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1564, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform27"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform27"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform28" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1644, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform28"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform28"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform29" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1724, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform29"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform29"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform30" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1804, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform30"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform30"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform31" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1884, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform31"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform31"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform32" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1964, 133)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform32"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform32"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform33" type="StaticBody2D" parent="Platforms"]
+position = Vector2(2191, 147)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform33"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform33"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform34" type="StaticBody2D" parent="Platforms"]
+position = Vector2(2271, 147)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform34"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform34"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform35" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1160, 288)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform35"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform35"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform36" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1160, 368)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform36"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform36"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform23" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1560, 368)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform23"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform23"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
+
+[node name="Platform24" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1560, 288)
+
+[node name="Icon" type="Sprite2D" parent="Platforms/Platform24"]
+scale = Vector2(0.624887, 0.624887)
+texture = ExtResource("1_lx5ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform24"]
+shape = SubResource("RectangleShape2D_8g77o")
+debug_color = Color(0, 0.610842, 0.632626, 0.42)
