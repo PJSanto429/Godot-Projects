@@ -1,9 +1,10 @@
-[gd_scene load_steps=67 format=3 uid="uid://b60kxxayyicxb"]
+[gd_scene load_steps=68 format=3 uid="uid://b60kxxayyicxb"]
 
 [ext_resource type="Texture2D" uid="uid://c1c5naqgmqu5q" path="res://assets/woodcutter/Woodcutter_jump.png" id="1_dbn46"]
 [ext_resource type="Texture2D" uid="uid://bcon5qeeajd34" path="res://assets/woodcutter/Woodcutter_idle.png" id="1_gc3oj"]
 [ext_resource type="Texture2D" uid="uid://pe5hf00joe8l" path="res://assets/woodcutter/Woodcutter_climb.png" id="1_ip4ul"]
 [ext_resource type="Texture2D" uid="uid://cba6wewh3553h" path="res://assets/woodcutter/Woodcutter_run.png" id="1_makco"]
+[ext_resource type="Script" path="res://character.gd" id="1_mmpgn"]
 [ext_resource type="Texture2D" uid="uid://bp2warhl8b5po" path="res://assets/woodcutter/Woodcutter_walk.png" id="1_roe1u"]
 [ext_resource type="Texture2D" uid="uid://cwmast1kbvqd7" path="res://assets/woodcutter/Woodcutter_craft.png" id="1_t5vgs"]
 [ext_resource type="Texture2D" uid="uid://che10wnhqe4w" path="res://assets/woodcutter/Woodcutter_attack1.png" id="3_wxkox"]
@@ -437,13 +438,14 @@ size = Vector2(17.4075, 13.766)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7swh"]
 size = Vector2(15, 6)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Woodcutter" type="CharacterBody2D"]
 collision_mask = 258
+script = ExtResource("1_mmpgn")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, 1)
 sprite_frames = SubResource("SpriteFrames_ir1tk")
-animation = &"climb"
+animation = &"sideAttack"
 autoplay = "idle"
 
 [node name="hurtBox" type="CollisionShape2D" parent="."]

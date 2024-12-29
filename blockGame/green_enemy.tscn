@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dptdafr17t773"]
+
+[ext_resource type="Script" path="res://green_enemy.gd" id="1_o70ws"]
+[ext_resource type="Texture2D" uid="uid://ra5fonvrohcy" path="res://assets/aliens/tile_0000.png" id="1_xvaop"]
+[ext_resource type="Texture2D" uid="uid://dnwoh2qii52wf" path="res://assets/aliens/tile_0001.png" id="2_xoxip"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tk0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xvaop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xoxip")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x24ib"]
+size = Vector2(20, 24)
+
+[node name="Green Enemy" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_o70ws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1tk0m")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.157544
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_x24ib")
