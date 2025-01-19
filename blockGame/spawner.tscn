@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6bkmxd8nvyc5"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_a05gd"]
+[ext_resource type="Texture2D" uid="uid://bb058cfyvwhpc" path="res://assets/spawner/pixil-frame-1.png" id="2_nidrm"]
+[ext_resource type="Texture2D" uid="uid://bcnrvl8t2g1bg" path="res://assets/spawner/pixil-frame-2.png" id="3_wgiv7"]
+[ext_resource type="Texture2D" uid="uid://g36xu6113tqe" path="res://assets/spawner/pixil-frame-3.png" id="4_0pdey"]
+[ext_resource type="Texture2D" uid="uid://1dkiprrsc5ym" path="res://assets/spawner/pixil-frame-4.png" id="5_e0pxl"]
+[ext_resource type="Texture2D" uid="uid://ccs7oawy3srwa" path="res://assets/spawner/disabled.png" id="6_gg8vv"]
+
+[node name="Spawner" type="Node2D"]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_a05gd")
+
+[node name="Enabled" type="Node2D" parent="."]
+
+[node name="frame1" type="Sprite2D" parent="Enabled"]
+texture = ExtResource("2_nidrm")
+
+[node name="frame2" type="Sprite2D" parent="Enabled"]
+texture = ExtResource("3_wgiv7")
+
+[node name="frame3" type="Sprite2D" parent="Enabled"]
+texture = ExtResource("4_0pdey")
+
+[node name="frame4" type="Sprite2D" parent="Enabled"]
+texture = ExtResource("5_e0pxl")
+
+[node name="Disabled" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6.10352e-05, 1.52588e-05)
+texture = ExtResource("6_gg8vv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

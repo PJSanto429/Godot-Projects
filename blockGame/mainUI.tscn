@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://brjm820icp2m"]
+
+[ext_resource type="Script" path="res://mainUI.gd" id="1_6cgbc"]
+[ext_resource type="Texture2D" uid="uid://cpmtmsap6vg4y" path="res://assets/coin.png" id="3_5le62"]
+[ext_resource type="Texture2D" uid="uid://dnv7rpqtrvl1j" path="res://assets/hearts/full.png" id="3_jq2th"]
+[ext_resource type="Texture2D" uid="uid://4ku1o3dl2ihu" path="res://assets/numbers/0.png" id="4_wa8eb"]
+
+[node name="mainUI" type="CanvasLayer"]
+script = ExtResource("1_6cgbc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -170.0
+offset_right = 101.0
+offset_bottom = 41.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+offset_top = 5.0
+offset_right = 128.0
+offset_bottom = 45.0
+scale = Vector2(0.75, 0.75)
+
+[node name="heart1" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../heart2")
+texture = ExtResource("3_jq2th")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_jq2th")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_jq2th")
+expand_mode = 2
+
+[node name="Coin" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -163.0
+offset_top = 4.0
+offset_right = -131.0
+offset_bottom = 36.0
+texture = ExtResource("3_5le62")
+stretch_mode = 1
+
+[node name="thousandsNum" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 1.0
+offset_right = -91.0
+offset_bottom = 41.0
+texture = ExtResource("4_wa8eb")
+
+[node name="hundredsNum" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -102.0
+offset_top = 1.0
+offset_right = -62.0
+offset_bottom = 41.0
+texture = ExtResource("4_wa8eb")
+
+[node name="tensNum" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 1.0
+offset_right = -33.0
+offset_bottom = 41.0
+texture = ExtResource("4_wa8eb")
+
+[node name="onesNum" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -43.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 41.0
+texture = ExtResource("4_wa8eb")

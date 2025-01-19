@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b60kxxayyicxb"]
+[gd_scene load_steps=82 format=3 uid="uid://b60kxxayyicxb"]
 
 [ext_resource type="Texture2D" uid="uid://c1c5naqgmqu5q" path="res://assets/woodcutter/Woodcutter_jump.png" id="1_dbn46"]
 [ext_resource type="Texture2D" uid="uid://bcon5qeeajd34" path="res://assets/woodcutter/Woodcutter_idle.png" id="1_gc3oj"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bp2warhl8b5po" path="res://assets/woodcutter/Woodcutter_walk.png" id="1_roe1u"]
 [ext_resource type="Texture2D" uid="uid://cwmast1kbvqd7" path="res://assets/woodcutter/Woodcutter_craft.png" id="1_t5vgs"]
 [ext_resource type="Texture2D" uid="uid://che10wnhqe4w" path="res://assets/woodcutter/Woodcutter_attack1.png" id="3_wxkox"]
+[ext_resource type="Texture2D" uid="uid://bvvwys2t1fq14" path="res://assets/woodcutter/Woodcutter_hurt.png" id="5_n5t00"]
 [ext_resource type="Texture2D" uid="uid://srikr4br4da1" path="res://assets/woodcutter/Woodcutter_attack2.png" id="5_r8480"]
 [ext_resource type="Texture2D" uid="uid://bst7i0tnskcbw" path="res://assets/woodcutter/Woodcutter_attack3.png" id="7_mut5s"]
+[ext_resource type="Texture2D" uid="uid://doi3tn2bvd0fc" path="res://assets/woodcutter/Woodcutter_death.png" id="8_exfis"]
+[ext_resource type="AudioStream" uid="uid://2sxr8ldh5wth" path="res://sounds/pickupCoin.wav" id="13_uab7j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjnu2"]
 atlas = ExtResource("1_ip4ul")
@@ -83,6 +86,18 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("3_wxkox")
 region = Rect2(240, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vskj4"]
+atlas = ExtResource("5_n5t00")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvnh2"]
+atlas = ExtResource("5_n5t00")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg8oa"]
+atlas = ExtResource("5_n5t00")
+region = Rect2(96, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfl3h"]
 atlas = ExtResource("1_gc3oj")
 region = Rect2(0, 0, 48, 48)
@@ -121,6 +136,30 @@ region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p14qt"]
 atlas = ExtResource("1_dbn46")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47mcn"]
+atlas = ExtResource("8_exfis")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyl5h"]
+atlas = ExtResource("8_exfis")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w30cg"]
+atlas = ExtResource("8_exfis")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg5mo"]
+atlas = ExtResource("8_exfis")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av8gn"]
+atlas = ExtResource("8_exfis")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyrlj"]
+atlas = ExtResource("8_exfis")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cj1uq"]
@@ -292,6 +331,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vskj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvnh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg8oa")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bfl3h")
 }, {
 "duration": 1.0,
@@ -331,6 +384,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47mcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyl5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w30cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg5mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av8gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyrlj")
+}],
+"loop": false,
+"name": &"new_animation",
 "speed": 8.0
 }, {
 "frames": [{
@@ -430,13 +506,19 @@ animations = [{
 size = Vector2(10.0075, 18.6767)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjc84"]
-size = Vector2(12, 30)
+size = Vector2(12, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_707af"]
 size = Vector2(17.4075, 13.766)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7swh"]
 size = Vector2(15, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il47v"]
+size = Vector2(10, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0rq0"]
+size = Vector2(28, 36)
 
 [node name="Woodcutter" type="CharacterBody2D"]
 collision_mask = 258
@@ -445,33 +527,65 @@ script = ExtResource("1_mmpgn")
 [node name="animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, 1)
 sprite_frames = SubResource("SpriteFrames_ir1tk")
-animation = &"sideAttack"
-autoplay = "idle"
+animation = &"idle"
+frame_progress = 0.0367342
 
-[node name="hurtBox" type="CollisionShape2D" parent="."]
+[node name="mainCollision" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(-1.25002, 8.14385)
 scale = Vector2(1.64877, 1.72877)
 shape = SubResource("RectangleShape2D_yqpjf")
 
 [node name="downAttack" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
 [node name="downAttackCollision" type="CollisionShape2D" parent="downAttack"]
-position = Vector2(22, 10)
+position = Vector2(22, 13)
 shape = SubResource("RectangleShape2D_bjc84")
+disabled = true
 debug_color = Color(0.65879, 0.515309, 1.92523e-07, 0.42)
 
 [node name="sideAttack" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
 [node name="sideAttackCollision" type="CollisionShape2D" parent="sideAttack"]
 position = Vector2(20.95, 11.6553)
 scale = Vector2(0.809994, 0.531065)
 shape = SubResource("RectangleShape2D_707af")
+disabled = true
 debug_color = Color(0.95415, 2.88785e-07, 0.549913, 0.42)
 
 [node name="walkAttack" type="Area2D" parent="."]
+visible = false
 
 [node name="walkAttackCollision" type="CollisionShape2D" parent="walkAttack"]
 position = Vector2(17.5, 8)
 shape = SubResource("RectangleShape2D_o7swh")
+disabled = true
 debug_color = Color(0.746957, 0.223672, 0.982253, 0.42)
+
+[node name="hurtBox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_il47v")
+debug_color = Color(1, 0, 0, 0.392157)
+
+[node name="collectionBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectionBox"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_y0rq0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_uab7j")
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="collectionBox" to="." method="_on_collection_box_area_entered"]
